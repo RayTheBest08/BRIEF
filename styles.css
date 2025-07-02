@@ -36,6 +36,7 @@ header{
 
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 header nav ul{
@@ -387,6 +388,24 @@ footer{
 
 /* Medias queries pour adapter à chaque écrans de nos terminaux */
 
+@media screen and (max-width: 1024px) {
+    main {
+        padding: 1rem;
+    }
+    #hero {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0.5rem;
+    }
+    .services-list {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    #album .photo {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media screen and (max-width: 768px) {
     header nav ul {
         flex-direction: column;
@@ -398,25 +417,75 @@ footer{
         padding: 1rem;
         display: none; /* Hide by default */
     }
-
     header nav ul.active {
         display: flex; /* Show when active */
     }
-
     header button {
         display: none; /* Hide button on mobile */
     }
-
+    #hero {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0.5rem;
+    }
     #hero .gauche h1 {
-        font-size: 2.5rem; /* Smaller font size on mobile */
+        font-size: 2.2rem; /* Smaller font size on mobile */
     }
-
     #hero .gauche p {
-        font-size: 0.9rem; /* Smaller font size on mobile */
+        font-size: 0.95rem; /* Smaller font size on mobile */
     }
-
     .services-list {
         flex-direction: column; /* Stack services vertically */
+        gap: 1.5rem;
     }
-    
+    #album .photo {
+        grid-template-columns: 1fr;
+    }
+    .card-service {
+        margin-bottom: 1rem;
+    }
+    .droite, .gauche {
+        width: 100%;
+        padding: 0;
+    }
+    .photo img {
+        height: auto;
+    }
+    #contact {
+        flex-direction: column;
+        height: auto;
+    }
+    #contact .partie1, .partie2 {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+    }
+    footer {
+        height: auto;
+        padding: 1rem 0.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        padding: 0.5rem;
+    }
+    #hero .gauche h1 {
+        font-size: 1.3rem;
+    }
+    #hero .gauche p {
+        font-size: 0.8rem;
+    }
+    .options-titles, #services h2, #album h2, #contact h2 {
+        font-size: 1.1rem;
+    }
+    .card-service h3 {
+        font-size: 1rem;
+    }
+    .photo img {
+        border-radius: 3px;
+    }
+    .services-list, .card-service, .photo img {
+        margin: 0;
+        padding: 0;
+    }
 }
